@@ -23,7 +23,10 @@ and what you should write is the sayHi function that makes the code above work,
 */
 
 
-
+	function first(arr, callback){
+		var firstName = arr[0];
+		return callback(firstName);
+	}
   //Code Here for first
   
 
@@ -38,7 +41,10 @@ first(names, function(firstName){
 
 
 
-
+	function last(arr, callback){
+		var lastName = arr[arr.length-1];
+		return callback(lastName);
+	}
   //Code Here for last
 
 last(names, function(lastName){
@@ -55,7 +61,10 @@ last(names, function(lastName){
 
 
 
-
+	function multiply(num1, num2, callback){
+		var result = num1 * num2;
+		return callback(result);
+	}
   //Code Here for multiply
 
 multiply(4, 3, function(answer){
@@ -71,7 +80,14 @@ multiply(4, 3, function(answer){
 
 
 
-
+	function contains(arr, item, callback){
+		for (var i = 0; i < arr.length; i++){
+			if (arr[i] === item){
+				return callback(true);
+			}
+		}
+		return callback(false);
+	}
   //Code Here for contains
 
 contains(names, 'Colt', function(result){
@@ -90,7 +106,15 @@ contains(names, 'Colt', function(result){
 
 
 
-
+		function uniq(arr, callback){
+			var seen = [];
+			for (var i = 0; i < arr.length; i++){
+				if (!seen.includes(arr[i])){
+					seen.push(arr[i]);
+				}
+			}
+			return callback(seen);
+		}
     //Code Here for uniq
 
 uniq(names, function(uniqArr){
@@ -105,7 +129,11 @@ uniq(names, function(uniqArr){
 
 
 
-
+		function each(arr, callback){
+			for (var i = 0; i < arr.length; i++){
+				callback(arr[i], i);
+			}
+		}
     //Code Here for each
 
 each(names, function(item, indice){
@@ -121,7 +149,13 @@ each(names, function(item, indice){
 
 
 
-
+	function getUserById(arr, wanted, callback){
+		for (var i = 0; i < arr.length; i++){
+			if (arr[i].id === wanted){
+				return callback(arr[i]);
+			}
+		}
+	}
  //code here for getUserById
 
 var users = [
