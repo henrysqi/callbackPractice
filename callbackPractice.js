@@ -24,8 +24,7 @@ and what you should write is the sayHi function that makes the code above work,
 
 
 	function first(arr, callback){
-		var firstName = arr[0];
-		return callback(firstName);
+		return callback(arr[0]);
 	}
   //Code Here for first
   
@@ -42,8 +41,7 @@ first(names, function(firstName){
 
 
 	function last(arr, callback){
-		var lastName = arr[arr.length-1];
-		return callback(lastName);
+		return callback(arr[arr.length-1]);
 	}
   //Code Here for last
 
@@ -62,8 +60,7 @@ last(names, function(lastName){
 
 
 	function multiply(num1, num2, callback){
-		var result = num1 * num2;
-		return callback(result);
+		return callback(num1 * num2);
 	}
   //Code Here for multiply
 
